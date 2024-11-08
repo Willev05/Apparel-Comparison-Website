@@ -2,9 +2,6 @@ import React from "react";
 
 const Compare = ()=>{
 
-
-
-
     return(
         <>
             <h1>Compare Page</h1>
@@ -13,7 +10,7 @@ const Compare = ()=>{
         
         
         </>
-    )
-}
+    );
+};
 
 export default Compare;
