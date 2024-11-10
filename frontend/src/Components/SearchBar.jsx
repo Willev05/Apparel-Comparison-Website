@@ -46,7 +46,7 @@ const SearchBar = () => {
                 <ul>
                     {sneakers.map((sneaker, index) => (
                         <li key={index}>
-                            <h3>{sneaker.name}</h3>
+                            <h3>{sneaker.shoeName}</h3>
                             <img src={sneaker.thumbnail} alt={sneaker.name} width="150" height="150" />
                             <p>Price: ${sneaker.retailPrice}</p>
                             <p>Brand: {sneaker.brand}</p>
