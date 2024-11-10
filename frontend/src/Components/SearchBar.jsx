@@ -4,10 +4,11 @@ import axios from 'axios';
 
 const SearchBar = () => {
     const [sneakers, setSneakers] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchSneakers = async () => {
+        const fetchPopularSneakers = async () => {
             const options = {
                 method: 'GET',
                 url: 'https://sneaker-database-stockx.p.rapidapi.com/mostpopular',
@@ -28,15 +29,42 @@ const SearchBar = () => {
             }
         };
 
-        fetchSneakers();
+        fetchPopularSneakers();
     }, []);
+
+
+    const handleSearch = async()=>{
+        const options = {
+            method: 'GET',
+            url: 'https://sneaker-database-stockx.p.rapidapi.com/getproducts',
+            params: {
+              keywords: searchTerm,
+              limit: '10'
+            },
+            headers: {
+              'x-rapidapi-key': process.env.REACT_APP_API_KEY,
+              'x-rapidapi-host': 'sneaker-database-stockx.p.rapidapi.com'
+            }
+          };
+          
+          try {
+              const response = await axios.request(options);
+              console.log(response.data);
+              setSneakers(response.data);
+          } catch (error) {
+              console.error(error);
+          }
+
+    }
+
+
 
     return (
         <>
             <div className='search'>
                 <p>What Shoe would you like to search for?</p>
-                <input type="text" placeholder='Search...' />
-                <button className='submit'>Search</button>
+                <input type="text" placeholder='Search...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+                <button className='submit' onClick={handleSearch}>Search</button>
             </div>
             
             {error && <p>{error}</p>}
