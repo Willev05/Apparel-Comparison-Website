@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/SearchBar.css';
 import axios from 'axios';
+import Card from './Card.jsx';
+
 
 const SearchBar = () => {
     const [sneakers, setSneakers] = useState([]);
@@ -71,16 +73,17 @@ const SearchBar = () => {
             
             <div>
                 <h2>Most Popular Sneakers</h2>
-                <ul>
+                
                     {sneakers.map((sneaker, index) => (
-                        <li key={index}>
-                            <h3>{sneaker.shoeName}</h3>
-                            <img src={sneaker.thumbnail} alt={sneaker.name} width="150" height="150" />
-                            <p>Price: ${sneaker.retailPrice}</p>
-                            <p>Brand: {sneaker.brand}</p>
-                        </li>
+                        
+                          
+
+                            <Card name = {sneaker.shoeName} thumbnail = {sneaker.thumbnail} price = {sneaker.retailPrice} brand = {sneaker.brand} key = {index}></Card>
+
+
+                        
                     ))}
-                </ul>
+                
             </div>
         </>
     );
