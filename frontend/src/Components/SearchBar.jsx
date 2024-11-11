@@ -8,6 +8,7 @@ const SearchBar = () => {
     const [sneakers, setSneakers] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [error, setError] = useState(null);
+    const [result,setResult] = useState("Most Popular")
 
     useEffect(() => {
         const fetchPopularSneakers = async () => {
@@ -53,6 +54,7 @@ const SearchBar = () => {
               const response = await axios.request(options);
               console.log(response.data);
               setSneakers(response.data);
+              setResult("Results for: "+searchTerm);
           } catch (error) {
               console.error(error);
           }
@@ -71,16 +73,17 @@ const SearchBar = () => {
             
             {error && <p>{error}</p>}
             
-            <div>
-                <h2>Most Popular Sneakers</h2>
+            <div className='shoeList'>
+                <h2>{result}</h2>
                 
                     {sneakers.map((sneaker, index) => (
-                        
-                          
-
-                            <Card name = {sneaker.shoeName} thumbnail = {sneaker.thumbnail} price = {sneaker.retailPrice} brand = {sneaker.brand} key = {index}></Card>
-
-
+                    
+                            <Card name = {sneaker.shoeName} 
+                                thumbnail = {sneaker.thumbnail} 
+                                price = {sneaker.retailPrice} 
+                                brand = {sneaker.brand} 
+                                key = {index}>
+                            </Card>
                         
                     ))}
                 

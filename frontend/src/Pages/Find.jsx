@@ -1,10 +1,11 @@
 import React from 'react';
 import SearchBar from "../Components/SearchBar";
+import '../Styles/Find.css';
 
 const Find = () => {
     return (
         <>
-            <h1>Find Page</h1>
+            <h1 id = "title">Apparel Finder</h1>
             <SearchBar />
         </>
     );
