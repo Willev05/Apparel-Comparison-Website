@@ -33,7 +33,7 @@ const handleAddWishList = () => {
         <div className="card" key={props.key}>
             
             <h2>{props.name}</h2>
-            <img src={props.thumbnail} alt={props.name} width="150" height= "150"></img>
+            <img src={props.thumbnail} alt={props.name} width="170" height= "150"></img>
             <p><strong>Price: </strong>${props.price}</p>
             <p><strong>Brand: </strong>{props.brand}</p>
 

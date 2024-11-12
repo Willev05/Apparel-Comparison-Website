@@ -1,4 +1,5 @@
 import React from "react"; 
+import LoadComparCards from "../Components/LoadCompareCards";
 
 
 const Compare = ()=>{
@@ -6,6 +7,7 @@ const Compare = ()=>{
     return(
         <>
             <h1>Compare Page</h1>
+            <LoadComparCards />
             
             
         

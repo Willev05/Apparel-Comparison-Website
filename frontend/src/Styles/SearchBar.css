@@ -42,7 +42,11 @@
 }
 
 .shoeList h2{
-    margin-left: 1.1vw;
+    margin-left: 1.2vw;
+}
+
+.shoeList {
+    margin-left: 1.5vw;
 }
 
 #err {
