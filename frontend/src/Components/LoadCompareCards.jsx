@@ -14,6 +14,8 @@ const LoadComparCards = () => {
         setSneakers(storedShoes);
     }, []);
 
+    console.log(sneakers);
+
   return (
     <>
         <div className='loadDiv'>
