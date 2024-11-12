@@ -1,6 +1,32 @@
 import '../Styles/card.css';
 
 function Card(props){
+
+
+
+
+
+
+
+    const handleAddWishList = ()=>{
+
+        const shoe ={
+            thumbnail: props.thumbnail,
+            title: props.name,
+            price: props.price,
+            brand: props.brand
+
+        }
+
+        const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
+
+        existingWishlist.push(shoe);
+        localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+
+
+    }
+
+
     return(
         <div className="card" key={props.key}>
             
@@ -10,7 +36,7 @@ function Card(props){
             <p><strong>Brand: </strong>{props.brand}</p>
 
             <button className='compare'>Add to Compare List</button>
-            <button className='wish'>Add to Wishlist</button>
+            <button className='wish' onClick={handleAddWishList}>Add to Wishlist</button>
 
         </div>
 
