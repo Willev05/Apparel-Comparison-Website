@@ -14,12 +14,20 @@
 
 .compare{
     height: 40px;
-    width: 80;
+    width: 80px;
     border: none;
     background-color: #E8E8E8;
     border-radius: 5px;
     margin: 15px;
     margin-right: 40px;
+}
+
+
+
+
+.image{
+    max-width: 60%;
+    max-height: 60%;
 }
 
 .compare:hover{
@@ -30,7 +38,7 @@
 
 .wish{
     height: 40px;
-    width: 80;
+    width: 80px;
     border: none;
     background-color: #E8E8E8;
     border-radius: 5px;
@@ -43,3 +51,4 @@
     background-color: #d0cece;
     
 }
+

@@ -1,4 +1,6 @@
 import '../Styles/card.css';
+import comparepic from '../assets/compare.209x256.png';
+import heartOutline from '../assets/heartoutline2.png';
 
 function Card(props){
 
@@ -60,8 +62,17 @@ const handleAddWishList = () => {
             <p><strong>Brand: </strong>{props.brand}</p>
 
 
-            <button className='compare' onClick={handelAddComparList}>Add to Compare List</button>
-            <button className='wish' onClick={handleAddWishList}>Add to Wishlist</button>
+            <button className='compare' onClick={handelAddComparList}>
+                <img src={comparepic} className='image' alt="Add to Comparelist" />
+
+            </button>
+            <button className='wish' onClick={handleAddWishList}>
+            <img src={heartOutline} className='image' alt="Add to Comparelist" />
+
+
+            </button>
+            
+
 
         </div>
 
