@@ -24,7 +24,29 @@ const handleAddWishList = () => {
         };
 
         const existingShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
-        existingShoes.push(shoe);
+
+        let shoeInCompare = false;
+
+        for(let i = 0; i<existingShoes.length; i++){
+            if(JSON.stringify(existingShoes[i]) === JSON.stringify(shoe)){
+                shoeInCompare = true;
+            }
+        }
+
+        if(shoeInCompare){
+            alert("Shoe already in compare list");
+        }
+
+        else {
+            existingShoes.push(shoe);
+        }
+
+
+
+
+       
+       
+        
         localStorage.setItem("Compare List", JSON.stringify(existingShoes));
     }
 
