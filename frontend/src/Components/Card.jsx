@@ -2,28 +2,30 @@ import '../Styles/card.css';
 
 function Card(props){
 
-
-
-
-
-
-
-    const handleAddWishList = ()=>{
-
-        const shoe ={
+const handleAddWishList = () => {
+        const shoe = {
             thumbnail: props.thumbnail,
             title: props.name,
             price: props.price,
             brand: props.brand
-
-        }
+        };
 
         const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-
         existingWishlist.push(shoe);
         localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+    };
 
+    const handelAddComparList = () => {
+        const shoe = {
+            thumbnail: props.thumbnail,
+            title: props.name,
+            price: props.price,
+            brand: props.brand
+        };
 
+        const existingShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
+        existingShoes.push(shoe);
+        localStorage.setItem("Compare List", JSON.stringify(existingShoes));
     }
 
 
@@ -35,7 +37,8 @@ function Card(props){
             <p><strong>Price: </strong>${props.price}</p>
             <p><strong>Brand: </strong>{props.brand}</p>
 
-            <button className='compare'>Add to Compare List</button>
+
+            <button className='compare' onClick={handelAddComparList}>Add to Compare List</button>
             <button className='wish' onClick={handleAddWishList}>Add to Wishlist</button>
 
         </div>
