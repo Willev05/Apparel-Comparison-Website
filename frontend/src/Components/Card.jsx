@@ -4,12 +4,21 @@ import heartOutline from '../assets/heartoutline2.png';
 
 function Card(props){
 
+
+
 const handleAddWishList = () => {
         const shoe = {
             thumbnail: props.thumbnail,
             title: props.name,
             price: props.price,
-            brand: props.brand
+            brand: props.brand,
+            stockXPrice: props.stockXPrice,
+            stockXLink: props.stockXLink,
+            flightClubPrice: props.flightClubPrice,
+            flightClubLink: props.flightClubLink,
+            goatprice: props.goatprice,
+            goatLink: props.goatLink,
+            description: props.description
         };
 
         const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
@@ -22,7 +31,14 @@ const handleAddWishList = () => {
             thumbnail: props.thumbnail,
             title: props.name,
             price: props.price,
-            brand: props.brand
+            brand: props.brand,
+            stockXPrice: props.stockXPrice,
+            stockXLink: props.stockXLink,
+            flightClubPrice: props.flightClubPrice,
+            flightClubLink: props.flightClubLink,
+            goatprice: props.goatprice,
+            goatLink: props.goatLink,
+            description: props.description
         };
 
         const existingShoes = JSON.parse(localStorage.getItem("Compare List")) || [];

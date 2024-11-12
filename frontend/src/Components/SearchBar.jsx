@@ -90,11 +90,19 @@ const SearchBar = () => {
 
                 {errorMsg === null? (
                     sneakers.map((sneaker, index) => (
+
                         <Card 
                             name={sneaker.shoeName} 
                             thumbnail={sneaker.thumbnail} 
                             price={sneaker.retailPrice} 
                             brand={sneaker.brand} 
+                            stockXPrice= {sneaker.lowestResellPrice.stockX}
+                            stockXLink= {sneaker.resellLinks.stockX}
+                            flightClubPrice= {sneaker.lowestResellPrice.flightClub}
+                            flightClubLink= {sneaker.resellLinks.flightClub}
+                            goatPrice= {sneaker.lowestResellPrice.goat}
+                            goatLink= {sneaker.resellLinks.goat}
+                            description={sneaker.description}
                             key={index}
                         />
                     ))
