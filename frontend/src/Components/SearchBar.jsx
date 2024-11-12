@@ -7,7 +7,7 @@ import Card from './Card.jsx';
 const SearchBar = () => {
     const [sneakers, setSneakers] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [error, setError] = useState(null);
+    const [errorMsg, setErrorMsg] = useState(null);
     const [result,setResult] = useState("Most Popular")
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const SearchBar = () => {
                 setSneakers(response.data);
             } catch (error) {
                 console.error(error);
-                setError("Failed to fetch sneaker data.");
+                setErrorMsg("Failed to fetch sneaker data.");
             }
         };
 
@@ -56,20 +56,19 @@ const SearchBar = () => {
 
             if(response.data == null){
                 setSneakers([]);
-                setError("Sorry, No Results for: "+searchTerm);
+                setErrorMsg("Sorry, No Results for: "+searchTerm);
                 setResult("Results for: "+searchTerm);
             }
             else{
                 setSneakers(response.data);
                 setResult("Results for: "+searchTerm);
-                setError(null);
+                setErrorMsg(null);
 
             }
 
              
           } catch (error) {
               console.error(error);
-              setError(error);
           }
 
     }
@@ -89,7 +88,7 @@ const SearchBar = () => {
             <div className='shoeList'>
                 <h2>{result}</h2>
 
-                {error === null? (
+                {errorMsg === null? (
                     sneakers.map((sneaker, index) => (
                         <Card 
                             name={sneaker.shoeName} 
@@ -99,7 +98,7 @@ const SearchBar = () => {
                             key={index}
                         />
                     ))
-                ) : (<p id="err">{error}</p>)}
+                ) : (<p id="err">{errorMsg}</p>)}
                 
             </div>
         </>
