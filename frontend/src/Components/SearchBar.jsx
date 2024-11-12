@@ -57,6 +57,7 @@ const SearchBar = () => {
               setResult("Results for: "+searchTerm);
           } catch (error) {
               console.error(error);
+              setError(error);
           }
 
     }

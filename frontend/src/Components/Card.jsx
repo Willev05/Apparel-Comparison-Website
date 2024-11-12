@@ -6,8 +6,8 @@ function Card(props){
             
             <h2>{props.name}</h2>
             <img src={props.thumbnail} alt={props.name} width="150" height= "150"></img>
-            <p>Price: ${props.price}</p>
-            <p>Brand: {props.brand}</p>
+            <p><strong>Price: </strong>${props.price}</p>
+            <p><strong>Brand: </strong>{props.brand}</p>
 
         </div>
 
