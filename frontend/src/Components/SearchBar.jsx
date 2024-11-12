@@ -53,8 +53,20 @@ const SearchBar = () => {
           try {
               const response = await axios.request(options);
               console.log(response.data);
-              setSneakers(response.data);
-              setResult("Results for: "+searchTerm);
+
+            if(response.data == null){
+                setSneakers([]);
+                setError("Sorry, No Results for: "+searchTerm);
+                setResult("Results for: "+searchTerm);
+            }
+            else{
+                setSneakers(response.data);
+                setResult("Results for: "+searchTerm);
+                setError(null);
+
+            }
+
+             
           } catch (error) {
               console.error(error);
               setError(error);
@@ -72,21 +84,22 @@ const SearchBar = () => {
                 <button className='submit' onClick={handleSearch}>Search</button>
             </div>
             
-            {error && <p>{error}</p>}
+
             
             <div className='shoeList'>
                 <h2>{result}</h2>
-                
-                    {sneakers.map((sneaker, index) => (
-                    
-                            <Card name = {sneaker.shoeName} 
-                                thumbnail = {sneaker.thumbnail} 
-                                price = {sneaker.retailPrice} 
-                                brand = {sneaker.brand} 
-                                key = {index}>
-                            </Card>
-                        
-                    ))}
+
+                {error === null? (
+                    sneakers.map((sneaker, index) => (
+                        <Card 
+                            name={sneaker.shoeName} 
+                            thumbnail={sneaker.thumbnail} 
+                            price={sneaker.retailPrice} 
+                            brand={sneaker.brand} 
+                            key={index}
+                        />
+                    ))
+                ) : (<p id="err">{error}</p>)}
                 
             </div>
         </>
