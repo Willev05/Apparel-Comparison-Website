@@ -9,6 +9,9 @@ function Card(props){
             <p><strong>Price: </strong>${props.price}</p>
             <p><strong>Brand: </strong>{props.brand}</p>
 
+            <button className='compare'>Add to Compare List</button>
+            <button className='wish'>Add to Wishlist</button>
+
         </div>
 
     );
