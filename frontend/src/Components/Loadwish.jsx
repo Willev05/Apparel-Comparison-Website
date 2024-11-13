@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import '../Styles/LoadCompareCards.css';
 import CompareCards from './CompareCards';
 
-const LoadComparCards = () => {
+const Loadwish = () => {
     const [sneakers, setSneakers] = useState([]);
 
     useEffect(() => {
 
-        const Key = `Compare List`;
+        const Key = `Wishlist`;
         const storedShoes = JSON.parse(localStorage.getItem(Key)) || []; 
 
 
@@ -19,7 +19,7 @@ const LoadComparCards = () => {
   return (
     <>
         <div className='loadDiv'>
-            <h2>Compare List</h2>
+            <h2>Wish List</h2>
 
             {sneakers.map((sneaker, index) => (
                 <CompareCards 
@@ -36,4 +36,4 @@ const LoadComparCards = () => {
   );
 };
 
-export default LoadComparCards;
+export default Loadwish;

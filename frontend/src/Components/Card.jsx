@@ -16,14 +16,35 @@ const handleAddWishList = () => {
             stockXLink: props.stockXLink,
             flightClubPrice: props.flightClubPrice,
             flightClubLink: props.flightClubLink,
-            goatprice: props.goatprice,
+            goatPrice: props.goatPrice,
             goatLink: props.goatLink,
             description: props.description
         };
 
         const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-        existingWishlist.push(shoe);
+        let shoeInWishlist = false;
+
+        for(let i = 0; i<existingWishlist.length; i++){
+            if(JSON.stringify(existingWishlist[i]) === JSON.stringify(shoe)){
+                existingWishlist.splice(i, 1);
+                alert("shoe removed from wishlist");
+                shoeInWishlist = true;
+                
+            }
+
+        }
+
+        if(!shoeInWishlist){
+            existingWishlist.push(shoe);
+            
+        }
+
+
+
+        
         localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+
+
     };
 
     const handelAddComparList = () => {
@@ -36,7 +57,7 @@ const handleAddWishList = () => {
             stockXLink: props.stockXLink,
             flightClubPrice: props.flightClubPrice,
             flightClubLink: props.flightClubLink,
-            goatprice: props.goatprice,
+            goatPrice: props.goatPrice,
             goatLink: props.goatLink,
             description: props.description
         };
