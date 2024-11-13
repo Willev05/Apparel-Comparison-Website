@@ -11,9 +11,6 @@ const LoadWishCards = () => {
         setSneakers(storedShoes);
     }, []);
 
-    console.log("Loaded sneakers:", sneakers);//testing
-    console.log("Wishlist in localStorage:", localStorage.getItem('Wishlist'));//Testing
-
     return (
         <div className='loadWish'>
             {sneakers.map((sneaker, index) => (

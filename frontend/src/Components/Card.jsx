@@ -22,8 +22,29 @@ const handleAddWishList = () => {
         };
 
         const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-        existingWishlist.push(shoe);
+        let shoeInWishlist = false;
+
+        for(let i = 0; i<existingWishlist.length; i++){
+            if(JSON.stringify(existingWishlist[i]) === JSON.stringify(shoe)){
+                existingWishlist.splice(i, 1);
+                alert("shoe removed from wishlist");
+                shoeInWishlist = true;
+                
+            }
+
+        }
+
+        if(!shoeInWishlist){
+            existingWishlist.push(shoe);
+            
+        }
+
+
+
+        
         localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+
+
     };
 
     const handelAddComparList = () => {
