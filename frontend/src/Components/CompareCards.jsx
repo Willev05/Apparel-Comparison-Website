@@ -9,8 +9,12 @@ const CompareCards = ({ title, thumbnail, price, brand }) => {
         <div className="content">
             <img src={thumbnail} alt={title} className="thumbnail" />
             <div className="info">
-            <p><strong>Price: </strong>${price}</p>
-            <p><strong>Brand: </strong>{brand}</p>
+                <p><strong>Price: </strong>${price}</p>
+                <p><strong>Brand: </strong>{brand}</p>
+            </div>
+            <div className='action-buttons'>
+                <button id="remove">Remove</button>
+                <button id="select">Select</button>
             </div>
         </div>
         </div>
