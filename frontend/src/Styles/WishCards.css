@@ -1,13 +1,14 @@
-.card{
+.card2{
     border: 1px solid;
     border-radius: 10px;
     box-shadow: 5px 5px 5px;
     padding: 20px;
     margin: 10px;
     text-align: center;
-    width: 400px;
+    width: 500px;
     display: inline-block;
-    height: 500px;
+    height: 580px;
     vertical-align: middle;
     overflow: auto;
+
 }
