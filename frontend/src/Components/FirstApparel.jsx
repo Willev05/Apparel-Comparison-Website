@@ -41,9 +41,9 @@ const FirstApparel = () => {
                 <>
                     <img src={selectedApparel.thumbnail} alt={selectedApparel.name} width="130" height= "110"></img>
                     <p><strong>Retail Price: </strong>${selectedApparel.price}</p>
-                    <p><strong>stockX: </strong>{selectedApparel.stockXPrice}</p>
-                    <p><strong>flightClub: </strong>{selectedApparel.flightClubPrice}</p>
-                    <p><strong>goat: </strong>{selectedApparel.goatPrice}</p>
+                    <p><strong>stockX: </strong>${selectedApparel.stockXPrice}</p>
+                    <p><strong>flightClub: </strong>${selectedApparel.flightClubPrice}</p>
+                    <p><strong>goat: </strong>${selectedApparel.goatPrice}</p>
                     <p><strong>Description: </strong>{selectedApparel.description}</p>
 
                     <div className='action'>

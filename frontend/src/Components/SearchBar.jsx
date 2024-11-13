@@ -78,7 +78,7 @@ const SearchBar = () => {
     return (
         <>
             <div className='search'>
-                <p>What Shoe would you like to search for?</p>
+                <p>What Apparel would you like to search for?</p>
                 <input type="text" placeholder='Search...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                 <button className='submit' onClick={handleSearch}>Search</button>
             </div>
