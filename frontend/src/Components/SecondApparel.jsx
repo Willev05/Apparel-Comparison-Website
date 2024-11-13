@@ -47,8 +47,10 @@ const SecondApparel = () => {
                     <p><strong>goat: </strong>{selectedApparel2.goatPrice}</p>
                     <p><strong>Description: </strong>{selectedApparel2.description}</p>
 
-                    <button onClick={handleClear}>Clear Selection</button>
-                    <button onClick={handleAddWishlist}>Add to Wishlist</button>
+                    <div className='action2'>
+                        <button id="clear" onClick={handleClear}>Clear Selection</button>
+                        <button id="wish" onClick={handleAddWishlist}>Add to Wishlist</button>
+                    </div>
                 </>
             ):<p>Select an Apparel</p>
                 }
