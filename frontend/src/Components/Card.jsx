@@ -16,7 +16,7 @@ const handleAddWishList = () => {
             stockXLink: props.stockXLink,
             flightClubPrice: props.flightClubPrice,
             flightClubLink: props.flightClubLink,
-            goatprice: props.goatprice,
+            goatPrice: props.goatPrice,
             goatLink: props.goatLink,
             description: props.description
         };
@@ -36,7 +36,7 @@ const handleAddWishList = () => {
             stockXLink: props.stockXLink,
             flightClubPrice: props.flightClubPrice,
             flightClubLink: props.flightClubLink,
-            goatprice: props.goatprice,
+            goatPrice: props.goatPrice,
             goatLink: props.goatLink,
             description: props.description
         };
