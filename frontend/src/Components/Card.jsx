@@ -8,6 +8,7 @@ function Card(props){
 
 const handleAddWishList = () => {
         const shoe = {
+            id: props.id,
             thumbnail: props.thumbnail,
             title: props.name,
             price: props.price,
@@ -49,6 +50,7 @@ const handleAddWishList = () => {
 
     const handelAddComparList = () => {
         const shoe = {
+            id: props.id,
             thumbnail: props.thumbnail,
             title: props.name,
             price: props.price,
