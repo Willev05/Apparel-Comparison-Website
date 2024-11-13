@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../Styles/LoadCompareCards.css';
 import CompareCards from './CompareCards';
+import { ApparelContext, ApparelProvider } from '../Context/ApparelContext';
 
 const LoadComparCards = () => {
+
+    const {loadChange} = useContext(ApparelContext);
+
     const [sneakers, setSneakers] = useState([]);
 
     useEffect(() => {
@@ -12,7 +16,7 @@ const LoadComparCards = () => {
 
 
         setSneakers(storedShoes);
-    }, []);
+    }, [loadChange]);
 
     console.log(sneakers);
 
@@ -22,13 +26,14 @@ const LoadComparCards = () => {
             <h2>Compare List</h2>
 
             {sneakers.map((sneaker, index) => (
-                <CompareCards 
-                    key={index}
-                    title={sneaker.title}
-                    thumbnail={sneaker.thumbnail}
-                    price={sneaker.price}
-                    brand={sneaker.brand}
-                />
+                    <CompareCards 
+                        key={index}
+                        id={sneaker.id}
+                        title={sneaker.title}
+                        thumbnail={sneaker.thumbnail}
+                        price={sneaker.price}
+                        brand={sneaker.brand}
+                    />
             ))}
         </div>
     

@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Styles/CompareCards.css';
+import { ApparelContext } from '../Context/ApparelContext';
 
-const CompareCards = ({ title, thumbnail, price, brand }) => {
+const CompareCards = ({ id, title, thumbnail, price, brand }) => {
+
+    const {loadChange,setLoadChange} = useContext(ApparelContext);
+
+    const handleRemove = ()=>{
+        if(window.confirm("Are you sure you want to remove this apparel?")){
+
+            const Key = `Compare List`;
+
+            const storedApparels = JSON.parse(localStorage.getItem(Key)) || [];
+
+            const indexToRemove = storedApparels.findIndex((apparel) => {
+                const firstValue = Object.values(apparel)[0];
+                return firstValue === id;
+              });
+            
+
+              if (indexToRemove !== -1) {
+                storedApparels.splice(indexToRemove, 1); 
+              }
+            
+              //saving the list back into localstorage 
+              localStorage.setItem(Key, JSON.stringify(storedApparels));
+    
+
+              setLoadChange(loadChange+1);
+
+        }
+
+
+
+    }
+
+
   return (
     <>
         <div className='CompareCard'>
@@ -13,7 +47,7 @@ const CompareCards = ({ title, thumbnail, price, brand }) => {
                 <p><strong>Brand: </strong>{brand}</p>
             </div>
             <div className='action-buttons'>
-                <button id="remove">Remove</button>
+                <button id="remove" onClick={handleRemove}>Remove</button>
                 <button id="select">Select</button>
             </div>
         </div>

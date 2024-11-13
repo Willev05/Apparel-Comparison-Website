@@ -2,6 +2,7 @@ import React from "react";
 import LoadComparCards from "../Components/LoadCompareCards";
 import CompareApparels from "../Components/CompareApparels";
 import '../Styles/Compare.css';
+import { ApparelContext, ApparelProvider } from '../Context/ApparelContext';
 
 const Compare = ()=>{
 
@@ -9,8 +10,11 @@ const Compare = ()=>{
         <>
             <h1 id="title">Compare Dashboard</h1>
             <div className="compare-layout">
-                <LoadComparCards />
-                <CompareApparels />
+                <ApparelProvider>
+                    <LoadComparCards />
+                    <CompareApparels />
+                </ApparelProvider>
+                
             </div>
         
         </>

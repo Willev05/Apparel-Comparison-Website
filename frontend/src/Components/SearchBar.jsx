@@ -91,7 +91,8 @@ const SearchBar = () => {
                 {errorMsg === null? (
                     sneakers.map((sneaker, index) => (
 
-                        <Card 
+                        <Card
+                            id={sneaker._id} 
                             name={sneaker.shoeName} 
                             thumbnail={sneaker.thumbnail} 
                             price={sneaker.retailPrice} 
