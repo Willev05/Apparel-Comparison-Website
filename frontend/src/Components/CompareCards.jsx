@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import '../Styles/CompareCards.css';
 import { ApparelContext } from '../Context/ApparelContext';
 
+
 const CompareCards = ({ id, title, thumbnail, price, brand }) => {
 
-    const {loadChange,setLoadChange} = useContext(ApparelContext);
+    const {loadChange, setLoadChange,selectedNum,setSelectedNum,selectedApparel,setSelectedApparel,setSelectedApparel2,selectedApparel2} = useContext(ApparelContext);
+    
+
 
     const handleRemove = ()=>{
         if(window.confirm("Are you sure you want to remove this apparel?")){
@@ -36,6 +39,40 @@ const CompareCards = ({ id, title, thumbnail, price, brand }) => {
     }
 
 
+
+    const handleSelect = ()=>{
+
+        const Key = `Compare List`;
+
+        const storedApparels = JSON.parse(localStorage.getItem(Key)) || [];
+
+        const indexToFind = storedApparels.findIndex((apparel) => {
+            const firstValue = Object.values(apparel)[0];
+            return firstValue === id;
+          });
+
+          if(selectedNum === 0){
+            setSelectedApparel(storedApparels[indexToFind]);
+            setSelectedNum(1);
+            console.log(selectedApparel);
+            console.log("Selected Num is:"+selectedNum);
+
+            
+          }
+          else{
+            setSelectedApparel2(storedApparels[indexToFind]);
+            setSelectedNum(0);
+            console.log(selectedApparel2);
+            console.log("Selected Num is:"+selectedNum);
+          }
+
+          
+
+        
+
+    }
+
+
   return (
     <>
         <div className='CompareCard'>
@@ -48,7 +85,7 @@ const CompareCards = ({ id, title, thumbnail, price, brand }) => {
             </div>
             <div className='action-buttons'>
                 <button id="remove" onClick={handleRemove}>Remove</button>
-                <button id="select">Select</button>
+                <button id="select" onClick={handleSelect}>Select</button>
             </div>
         </div>
         </div>
