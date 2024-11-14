@@ -2,7 +2,7 @@ import React from "react";
 import LoadComparCards from "../Components/LoadCompareCards";
 import CompareApparels from "../Components/CompareApparels";
 import '../Styles/Compare.css';
-import { ApparelContext, ApparelProvider } from '../Context/ApparelContext';
+import {ApparelProvider} from '../Context/ApparelContext';
 
 const Compare = ()=>{
 
