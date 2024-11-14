@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../Styles/CompareApparels.css';
 import FirstApparel from './FirstApparel';
 import SecondApparel from './SecondApparel';

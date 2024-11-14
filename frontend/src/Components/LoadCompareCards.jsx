@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import '../Styles/LoadCompareCards.css';
 import CompareCards from './CompareCards';
-import { ApparelContext, ApparelProvider } from '../Context/ApparelContext';
+import { ApparelContext } from '../Context/ApparelContext';
 
 const LoadComparCards = () => {
 
@@ -28,7 +28,6 @@ const LoadComparCards = () => {
             {sneakers.map((sneaker, index) => (
                     <CompareCards 
                         key={index}
-                        id={sneaker.id}
                         title={sneaker.title}
                         thumbnail={sneaker.thumbnail}
                         price={sneaker.price}

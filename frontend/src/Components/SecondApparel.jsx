@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from 'react';
+import React, {useContext } from 'react';
 import '../Styles/SecondApparels.css';
 import { ApparelContext } from '../Context/ApparelContext';
 
@@ -14,9 +14,8 @@ const SecondApparel = () => {
 
     const handleAddWishlist = ()=>{
         const shoe = {
-            id: selectedApparel2.id,
-            thumbnail: selectedApparel2.thumbnail,
             title: selectedApparel2.title,
+            thumbnail: selectedApparel2.thumbnail,
             price: selectedApparel2.price,
             brand: selectedApparel2.brand,
             stockXPrice: selectedApparel2.stockXPrice,
@@ -38,7 +37,7 @@ const SecondApparel = () => {
         <>
             <div className='secondApparel-view'>
                 <h2>Apparel 2</h2>
-                {selectedApparel2.length != 0 ?(
+                {selectedApparel2.length !== 0 ?(
                 <>
                     <img src={selectedApparel2.thumbnail} alt={selectedApparel2.name} width="130" height= "110"></img>
                     <p><strong>Retail Price: </strong>${selectedApparel2.price}</p>
