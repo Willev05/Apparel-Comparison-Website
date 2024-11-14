@@ -24,7 +24,7 @@ const handleAddWishList = () => {
     if (index !== -1) {
         existingWishlist.splice(index, 1);
         setHeartState(heartOutline);
-        alert("Shoe removed from wishlist");
+        //alert("Shoe removed from wishlist");
     } else {
         existingWishlist.push({
             title: props.name,

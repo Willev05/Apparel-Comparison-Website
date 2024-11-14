@@ -12,6 +12,10 @@
 
 }
 
+.card button {
+    border-radius: 50%;
+}
+
 .compare{
     height: 40px;
     width: 80px;
