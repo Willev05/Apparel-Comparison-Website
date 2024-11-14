@@ -6,16 +6,20 @@ import React, {useEffect, useState} from 'react';
 
 function Card(props){
 
-var heartCondition;
-var shoeInWishlist = false;
+
 const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
+const existingCompareShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
+
+const [compareState, setCompareState] = useState("notCompare");
 
 // Initialize heartState directly in useState, then set it in useEffect
 const [heartState, setHeartState] = useState(heartOutline);
 
 useEffect(() => {
     let isFavorited = existingWishlist.some(apparel => apparel.title === props.name);
+    let isCompare = existingCompareShoes.some(apparel => apparel.title === props.name);
     setHeartState(isFavorited ? heartFilled : heartOutline);
+    setCompareState(isCompare ? "inCompare" : "notCompare");
 }, [props.name]);
 
 
@@ -45,7 +49,13 @@ const handleAddWishList = () => {
 };
 
     const handelAddComparList = () => {
-        const shoe = {
+        const index = existingCompareShoes.findIndex(item => item.title === props.name);
+    if (index !== -1) {
+        existingCompareShoes.splice(index, 1);
+        setCompareState("notCompare");
+        //alert("Shoe removed from wishlist");
+    } else {
+        existingCompareShoes.push({
             title: props.name,
             thumbnail: props.thumbnail,
             price: props.price,
@@ -57,33 +67,10 @@ const handleAddWishList = () => {
             goatPrice: props.goatPrice,
             goatLink: props.goatLink,
             description: props.description
-        };
-
-        const existingShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
-
-        let shoeInCompare = false;
-
-        for(let i = 0; i<existingShoes.length; i++){
-            if(JSON.stringify(existingShoes[i]) === JSON.stringify(shoe)){
-                shoeInCompare = true;
-            }
-        }
-
-        if(shoeInCompare){
-            alert("Shoe already in compare list");
-        }
-
-        else {
-            existingShoes.push(shoe);
-        }
-
-
-
-
-       
-       
-        
-        localStorage.setItem("Compare List", JSON.stringify(existingShoes));
+        });
+        setCompareState("inCompare");
+    }
+    localStorage.setItem("Compare List", JSON.stringify(existingCompareShoes));
     }
 
 
@@ -96,12 +83,12 @@ const handleAddWishList = () => {
             <p><strong>Brand: </strong>{props.brand}</p>
 
 
-            <button className='compare' onClick={handelAddComparList}>
-                <img src={comparepic} className='image' alt="Add to Comparelist" />
+            <button className='compare' id={compareState} onClick={handelAddComparList}>
+                <img src={comparepic} className='image' alt="Add to Comparelist"></img>
 
             </button>
             <button className='wish' onClick={handleAddWishList}>
-            <img src={heartState} className='image' alt="Add to Comparelist" />
+            <img src={heartState}  className='image' alt="Add to Comparelist" />
 
 
             </button>
