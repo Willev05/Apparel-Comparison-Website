@@ -7,9 +7,9 @@
     text-align: center;
     width: 400px;
     display: inline-block;
-    max-height: 400px;
+    height: 400px;
     vertical-align: middle;
-    overflow: auto;
+
 }
 
 .compare{
