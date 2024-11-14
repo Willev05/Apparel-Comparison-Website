@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import '../Styles/LoadCompareCards.css';
 import CompareCards from './CompareCards';
-import { ApparelContext, ApparelProvider } from '../Context/ApparelContext';
+import { ApparelContext } from '../Context/ApparelContext';
 
 const LoadComparCards = () => {
 

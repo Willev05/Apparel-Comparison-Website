@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from 'react';
+import React, {useContext } from 'react';
 import '../Styles/FirstApparel.css';
 import { ApparelContext } from '../Context/ApparelContext';
 
@@ -37,7 +37,7 @@ const FirstApparel = () => {
         <>
             <div className='firstApparel-view'>
                 <h2>Apparel 1</h2>
-                {selectedApparel.length != 0 ?(
+                {selectedApparel.length !== 0 ?(
                 <>
                     <img src={selectedApparel.thumbnail} alt={selectedApparel.name} width="130" height= "110"></img>
                     <p><strong>Retail Price: </strong>${selectedApparel.price}</p>
