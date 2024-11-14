@@ -96,12 +96,12 @@ const SearchBar = () => {
                             thumbnail={sneaker.thumbnail} 
                             price={sneaker.retailPrice} 
                             brand={sneaker.brand} 
-                            stockXPrice= {sneaker.lowestResellPrice?.stockX ?? 'N/A'}
-                            stockXLink= {sneaker.resellLinks?.stockX ?? '#'}
-                            flightClubPrice= {sneaker.lowestResellPrice?.flightClub ?? 'N/A'}
-                            flightClubLink= {sneaker.resellLinks?.flightClub ?? '#'}
-                            goatPrice= {sneaker.lowestResellPrice?.goat ?? 'N/A'}
-                            goatLink= {sneaker.resellLinks?.goat ?? '#'}
+                            stockXPrice= {sneaker.lowestResellPrice?.stockX ?? null}
+                            stockXLink= {sneaker.resellLinks?.stockX ?? null}
+                            flightClubPrice= {sneaker.lowestResellPrice?.flightClub ?? null}
+                            flightClubLink= {sneaker.resellLinks?.flightClub ?? null}
+                            goatPrice= {sneaker.lowestResellPrice?.goat ?? null}
+                            goatLink= {sneaker.resellLinks?.goat ?? null}
                             description={sneaker.description ?? 'No description available.'}
                             key={index}
                         />
