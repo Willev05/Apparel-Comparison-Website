@@ -10,14 +10,14 @@ function WishCards(props) {
             <p><strong>Brand: </strong>{props.brand}</p>
 
             <p><strong>------------------------------Resellers---------------------------</strong></p>
-            <p><strong>StockX Price: </strong>${props.stockXPrice}</p>
-            <p><strong>StockX Link: </strong><a href={props.stockXLink}>Purchase from StockX</a></p>
+            <p><strong>StockX Price: </strong>{props.stockXPrice != null ? "$"+props.stockXPrice : "N/A"}</p>
+            <p><strong>StockX Link: </strong><a href={props.stockXLink}>{props.stockXLink != null ? "Purchase from StockX" : "Product Not Avalible for Purchase"}</a></p>
 
-            <p><strong>FlightClub Price: </strong>${props.flightClubPrice}</p>
-            <p><strong>FlightClub Link: </strong><a href={props.flightClubLink}>Purchase from FlightClub</a></p>
+            <p><strong>FlightClub Price: </strong>{props.flightClubPrice != null ? "$"+props.flightClubPrice : "N/A"}</p>
+            <p><strong>FlightClub Link: </strong><a href={props.flightClubLink}>{props.flightClubLink != null ? "Purchase from FlightClub" : "Product Not Avalible for Purchase"}</a></p>
 
-            <p><strong>Goat Price: </strong>${props.goatPrice}</p>
-            <p><strong>Goat Link: </strong><a href={props.goatLink}>Purchase from Goat</a></p>
+            <p><strong>Goat Price: </strong>{props.goatPrice != null ? "$"+props.goatPrice : "N/A"}</p>
+            <p><strong>Goat Link: </strong><a href={props.goatLink}>{props.goatLink != null ? "Purchase from Goat" : "Product Not Avalible for Purchase"}</a></p>
         </div>
     );
 }
