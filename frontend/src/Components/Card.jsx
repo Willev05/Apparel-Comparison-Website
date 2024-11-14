@@ -1,13 +1,32 @@
 import '../Styles/card.css';
 import comparepic from '../assets/compare.209x256.png';
 import heartOutline from '../assets/heartoutline2.png';
+import heartFilled from '../assets/heartFilled.png';
+import React, {useEffect, useState} from 'react';
 
 function Card(props){
 
+var heartCondition;
+var shoeInWishlist = false;
+const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
+
+// Initialize heartState directly in useState, then set it in useEffect
+const [heartState, setHeartState] = useState(heartOutline);
+
+useEffect(() => {
+    let isFavorited = existingWishlist.some(apparel => apparel.title === props.name);
+    setHeartState(isFavorited ? heartFilled : heartOutline);
+}, [props.name]);
 
 
 const handleAddWishList = () => {
-        const shoe = {
+    const index = existingWishlist.findIndex(item => item.title === props.name);
+    if (index !== -1) {
+        existingWishlist.splice(index, 1);
+        setHeartState(heartOutline);
+        //alert("Shoe removed from wishlist");
+    } else {
+        existingWishlist.push({
             title: props.name,
             thumbnail: props.thumbnail,
             price: props.price,
@@ -19,33 +38,11 @@ const handleAddWishList = () => {
             goatPrice: props.goatPrice,
             goatLink: props.goatLink,
             description: props.description
-        };
-
-        const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-        let shoeInWishlist = false;
-
-        for(let i = 0; i<existingWishlist.length; i++){
-            if(JSON.stringify(existingWishlist[i]) === JSON.stringify(shoe)){
-                existingWishlist.splice(i, 1);
-                alert("shoe removed from wishlist");
-                shoeInWishlist = true;
-                
-            }
-
-        }
-
-        if(!shoeInWishlist){
-            existingWishlist.push(shoe);
-            
-        }
-
-
-
-        
-        localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
-
-
-    };
+        });
+        setHeartState(heartFilled);
+    }
+    localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+};
 
     const handelAddComparList = () => {
         const shoe = {
@@ -104,7 +101,7 @@ const handleAddWishList = () => {
 
             </button>
             <button className='wish' onClick={handleAddWishList}>
-            <img src={heartOutline} className='image' alt="Add to Comparelist" />
+            <img src={heartState} className='image' alt="Add to Comparelist" />
 
 
             </button>

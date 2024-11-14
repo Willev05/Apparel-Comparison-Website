@@ -42,7 +42,7 @@ const SearchBar = () => {
             url: 'https://sneaker-database-stockx.p.rapidapi.com/getproducts',
             params: {
               keywords: searchTerm,
-              limit: '10'
+              limit: '20'
             },
             headers: {
               'x-rapidapi-key': process.env.REACT_APP_API_KEY,
@@ -96,13 +96,13 @@ const SearchBar = () => {
                             thumbnail={sneaker.thumbnail} 
                             price={sneaker.retailPrice} 
                             brand={sneaker.brand} 
-                            stockXPrice= {sneaker.lowestResellPrice.stockX}
-                            stockXLink= {sneaker.resellLinks.stockX}
-                            flightClubPrice= {sneaker.lowestResellPrice.flightClub}
-                            flightClubLink= {sneaker.resellLinks.flightClub}
-                            goatPrice= {sneaker.lowestResellPrice.goat}
-                            goatLink= {sneaker.resellLinks.goat}
-                            description={sneaker.description}
+                            stockXPrice= {sneaker.lowestResellPrice?.stockX ?? 'N/A'}
+                            stockXLink= {sneaker.resellLinks?.stockX ?? '#'}
+                            flightClubPrice= {sneaker.lowestResellPrice?.flightClub ?? 'N/A'}
+                            flightClubLink= {sneaker.resellLinks?.flightClub ?? '#'}
+                            goatPrice= {sneaker.lowestResellPrice?.goat ?? 'N/A'}
+                            goatLink= {sneaker.resellLinks?.goat ?? '#'}
+                            description={sneaker.description ?? 'No description available.'}
                             key={index}
                         />
                     ))
