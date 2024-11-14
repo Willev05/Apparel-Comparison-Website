@@ -3,7 +3,7 @@ import '../Styles/CompareCards.css';
 import { ApparelContext } from '../Context/ApparelContext';
 
 
-const CompareCards = ({ id, title, thumbnail, price, brand }) => {
+const CompareCards = ({title, thumbnail, price, brand }) => {
 
     const {loadChange, setLoadChange,selectedNum,setSelectedNum,selectedApparel,setSelectedApparel,setSelectedApparel2,selectedApparel2} = useContext(ApparelContext);
     
@@ -18,7 +18,7 @@ const CompareCards = ({ id, title, thumbnail, price, brand }) => {
 
             const indexToRemove = storedApparels.findIndex((apparel) => {
                 const firstValue = Object.values(apparel)[0];
-                return firstValue === id;
+                return firstValue === title;
               });
             
 
@@ -48,7 +48,7 @@ const CompareCards = ({ id, title, thumbnail, price, brand }) => {
 
         const indexToFind = storedApparels.findIndex((apparel) => {
             const firstValue = Object.values(apparel)[0];
-            return firstValue === id;
+            return firstValue === title;
           });
 
           if(selectedNum === 0){

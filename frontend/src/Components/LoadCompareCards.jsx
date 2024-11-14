@@ -28,7 +28,6 @@ const LoadComparCards = () => {
             {sneakers.map((sneaker, index) => (
                     <CompareCards 
                         key={index}
-                        id={sneaker.id}
                         title={sneaker.title}
                         thumbnail={sneaker.thumbnail}
                         price={sneaker.price}
