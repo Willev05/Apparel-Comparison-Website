@@ -15,7 +15,7 @@ const FirstApparel = () => {
         const shoe = {
             id: selectedApparel.id,
             thumbnail: selectedApparel.thumbnail,
-            title: selectedApparel.name,
+            title: selectedApparel.title,
             price: selectedApparel.price,
             brand: selectedApparel.brand,
             stockXPrice: selectedApparel.stockXPrice,
