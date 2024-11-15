@@ -16,6 +16,11 @@
     border-radius: 50%;
 }
 
+.card h2 {
+    height:64px;
+    overflow: auto;
+}
+
 .compare{
     height: 40px;
     width: 80px;
