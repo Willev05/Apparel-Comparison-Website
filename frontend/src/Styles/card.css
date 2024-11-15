@@ -29,11 +29,18 @@
     background-color: #E8E8E8;
 }
 
-#inCompare {
-    background-color: #008000;
+#notCompare:hover{
+    cursor: pointer;
+    background-color: #d0cece;
 }
 
+#inCompare {
+    background-color: #0eb00e;
+}
 
+#inCompare:hover{
+    background-color: #0c8d0c;
+}
 
 
 .image{
