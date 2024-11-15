@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import '../Styles/CompareCards.css';
 import { ApparelContext } from '../Context/ApparelContext';
 
@@ -7,7 +7,10 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
 
     const {loadChange, setLoadChange,selectedNum,setSelectedNum,selectedApparel,setSelectedApparel,setSelectedApparel2,selectedApparel2} = useContext(ApparelContext);
     
+useEffect(()=>{
+  sessionStorage.removeItem('Cards');
 
+},[])
 
     const handleRemove = ()=>{
         if(window.confirm("Are you sure you want to remove this apparel?")){
