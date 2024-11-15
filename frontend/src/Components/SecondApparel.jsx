@@ -25,23 +25,37 @@ const SecondApparel = () => {
     }
 
     const handleAddWishlist = ()=>{
-        const shoe = {
-            title: selectedApparel2.title,
-            thumbnail: selectedApparel2.thumbnail,
-            price: selectedApparel2.price,
-            brand: selectedApparel2.brand,
-            stockXPrice: selectedApparel2.stockXPrice,
-            stockXLink: selectedApparel2.stockXLink,
-            flightClubPrice: selectedApparel2.flightClubPrice,
-            flightClubLink: selectedApparel2.flightClubLink,
-            goatPrice: selectedApparel2.goatPrice,
-            goatLink: selectedApparel2.goatLink,
-            description: selectedApparel2.description
-        };
-
         const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-        existingWishlist.push(shoe);
-        localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+        const index = existingWishlist.findIndex(item => item.title === selectedApparel2.title);
+
+        if (index !== -1) {
+            alert("Item already on Wishlist");
+        }
+
+        else{
+
+            const shoe = {
+                title: selectedApparel2.title,
+                thumbnail: selectedApparel2.thumbnail,
+                price: selectedApparel2.price,
+                brand: selectedApparel2.brand,
+                stockXPrice: selectedApparel2.stockXPrice,
+                stockXLink: selectedApparel2.stockXLink,
+                flightClubPrice: selectedApparel2.flightClubPrice,
+                flightClubLink: selectedApparel2.flightClubLink,
+                goatPrice: selectedApparel2.goatPrice,
+                goatLink: selectedApparel2.goatLink,
+                description: selectedApparel2.description
+            };
+    
+    
+            existingWishlist.push(shoe);
+            localStorage.setItem("Wishlist", JSON.stringify(existingWishlist));
+
+
+        }
+
+       
     }
 
 
