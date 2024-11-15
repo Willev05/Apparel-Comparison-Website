@@ -65,6 +65,25 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
 
         }
 
+        else if(selectedApparel.length !== 0 && selectedApparel2.length !== 0){
+
+          if(selectedNum === 0){
+            setSelectedApparel(storedApparels[indexToFind]);
+            setSelectedNum(1);
+
+
+
+            
+          }
+          else{
+            setSelectedApparel2(storedApparels[indexToFind]);
+            setSelectedNum(0);
+
+
+          }
+
+        }
+
         
 
     }
