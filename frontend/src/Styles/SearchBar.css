@@ -1,6 +1,6 @@
 .search {
     height: 15vh;
-    width:40vw;
+    width:35vw;
     background-color: rgb(240, 240, 240);
     border-radius: 6px;
     margin-left: 30%;
@@ -42,6 +42,12 @@
 }
 
 .shoeList {
+
+    margin-bottom: 20px;
+    margin-left: 1.5%;
+}
+
+.shoeList h2{
     text-align: center;
 }
 

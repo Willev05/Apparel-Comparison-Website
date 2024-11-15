@@ -12,3 +12,21 @@
     overflow: auto;
 
 }
+
+
+#remove-wish {
+    height:27px;
+    width: 170px;
+    background-color: rgb(212, 64, 64);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+
+#remove-wish:hover {
+    cursor: pointer;
+    background-color: rgb(165, 18, 18);
+
+}

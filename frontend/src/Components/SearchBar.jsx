@@ -73,13 +73,19 @@ const SearchBar = () => {
 
     }
 
+    const handleKeyPress = (e)=>{
+        if(e.key === "Enter"){
+            handleSearch();
+        }
+    }
+
 
 
     return (
         <>
             <div className='search'>
                 <p>What Apparel would you like to search for?</p>
-                <input type="text" placeholder='Search...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+                <input type="text" placeholder='Search...' value={searchTerm} onKeyDown={handleKeyPress} onChange={(e) => setSearchTerm(e.target.value)}/>
                 <button className='submit' onClick={handleSearch}>Search</button>
             </div>
             

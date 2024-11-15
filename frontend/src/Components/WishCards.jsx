@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Styles/WishCards.css';
+import { ApparelContext } from '../Context/ApparelContext';
 
 function WishCards(props) {
+
+    const {loadChange, setLoadChange} = useContext(ApparelContext);
+
+    const handleRemove = ()=>{
+        if(window.confirm("Are you sure you want to remove this apparel?")){
+
+            const Key = `Wishlist`;
+
+            const storedApparels = JSON.parse(localStorage.getItem(Key)) || [];
+
+            const indexToRemove = storedApparels.findIndex((apparel) => {
+                const firstValue = Object.values(apparel)[0];
+                return firstValue === props.title;
+              });
+            
+
+              if (indexToRemove !== -1) {
+                storedApparels.splice(indexToRemove, 1); 
+              }
+            
+              //saving the list back into localstorage 
+              localStorage.setItem(Key, JSON.stringify(storedApparels));
+    
+
+              setLoadChange(loadChange+1);
+
+        }
+
+    }
+
+
+
     return (
         <div className="card2">
             <h2>{props.title}</h2>
@@ -18,6 +51,9 @@ function WishCards(props) {
 
             <p><strong>Goat Price: </strong>{props.goatPrice != null ? "$"+props.goatPrice : "N/A"}</p>
             <p><strong>Goat Link: </strong><a href={props.goatLink}>{props.goatLink != null ? "Purchase from Goat" : "Product Not Avalible for Purchase"}</a></p>
+
+            <button id="remove-wish" onClick={handleRemove}>Remove from Wishlist</button>
+
         </div>
     );
 }
