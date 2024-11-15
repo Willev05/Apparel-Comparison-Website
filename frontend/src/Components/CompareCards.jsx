@@ -123,7 +123,7 @@ useEffect(()=>{
         <div className="content">
             <img src={thumbnail} alt={title} className="thumbnail" />
             <div className="info">
-                <p><strong>Price: </strong>${price}</p>
+                <p><strong>Price: </strong>{price != null ? "$"+price : "N/A"}</p>
                 <p><strong>Brand: </strong>{brand}</p>
             </div>
             <div className='action-buttons'>

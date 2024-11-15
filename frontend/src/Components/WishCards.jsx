@@ -39,7 +39,7 @@ function WishCards(props) {
         <div className="card2">
             <h2>{props.title}</h2>
             <img src={props.thumbnail} alt={props.title} width="170" height="150" />
-            <p><strong>Retail Price: </strong>${props.price}</p>
+            <p><strong>Retail Price: </strong>{props.price != null ? "$"+props.price : "Price Not Provided"}</p>
             <p><strong>Brand: </strong>{props.brand}</p>
 
             <p><strong>------------------------------Resellers---------------------------</strong></p>

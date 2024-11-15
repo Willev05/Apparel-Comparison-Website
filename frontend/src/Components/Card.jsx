@@ -79,7 +79,7 @@ const handleAddWishList = () => {
             
             <h2>{props.name}</h2>
             <img src={props.thumbnail} alt={props.name} width="170" height= "150"></img>
-            <p><strong>Price: </strong>${props.price}</p>
+            <p><strong>Price: </strong>{props.price != null ? "$"+props.price : "Price Not Provided"}</p>
             <p><strong>Brand: </strong>{props.brand}</p>
 
 
