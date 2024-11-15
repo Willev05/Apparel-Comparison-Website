@@ -33,8 +33,7 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
               setLoadChange(loadChange+1);
 
         }
-
-
+        
 
     }
 
@@ -51,22 +50,20 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
             return firstValue === title;
           });
 
-          if(selectedNum === 0){
+          if(selectedApparel.length === 0 && selectedApparel2.length === 0){
             setSelectedApparel(storedApparels[indexToFind]);
-            setSelectedNum(1);
-            console.log(selectedApparel);
-            console.log("Selected Num is:"+selectedNum);
 
-            
-          }
-          else{
-            setSelectedApparel2(storedApparels[indexToFind]);
-            setSelectedNum(0);
-            console.log(selectedApparel2);
-            console.log("Selected Num is:"+selectedNum);
-          }
+        }
 
-          
+        else if(selectedApparel.length !== 0 && selectedApparel2.length === 0){
+          setSelectedApparel2(storedApparels[indexToFind]);
+
+        }
+
+        else if(selectedApparel.length === 0 && selectedApparel2.length !== 0){
+          setSelectedApparel(storedApparels[indexToFind]);
+
+        }
 
         
 
