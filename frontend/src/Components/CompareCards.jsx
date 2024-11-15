@@ -37,9 +37,30 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
 
     }
 
-
+    
 
     const handleSelect = ()=>{
+
+      const existingCompareCards = JSON.parse(sessionStorage.getItem("Cards")) || [];
+      console.log(existingCompareCards);
+
+      const index = existingCompareCards.findIndex(item => item.title === title);
+      console.log(index);
+
+      if (index !== -1) {
+        alert("Apperal already is being compared");
+
+
+      } else {
+
+        const card = {
+          title: title
+        }
+
+        existingCompareCards.push(card);
+
+        sessionStorage.setItem("Cards", JSON.stringify(existingCompareCards));
+
 
         const Key = `Compare List`;
 
@@ -49,6 +70,8 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
             const firstValue = Object.values(apparel)[0];
             return firstValue === title;
           });
+
+          setLoadChange(loadChange+1);
 
           if(selectedApparel.length === 0 && selectedApparel2.length === 0){
             setSelectedApparel(storedApparels[indexToFind]);
@@ -87,6 +110,7 @@ const CompareCards = ({title, thumbnail, price, brand }) => {
         
 
     }
+  }
 
 
   return (

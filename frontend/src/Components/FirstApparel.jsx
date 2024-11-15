@@ -9,6 +9,18 @@ const FirstApparel = () => {
 
     const handleClear = ()=>{
         setSelectedApparel([]);
+
+    const existingCompareCards = JSON.parse(sessionStorage.getItem("Cards")) || [];
+      console.log(existingCompareCards);
+
+      const index = existingCompareCards.findIndex(item => item.title === selectedApparel.title);
+      console.log(index);
+
+      if (index !== -1) {
+        existingCompareCards.splice(index, 1);
+      }
+
+      sessionStorage.setItem("Cards", JSON.stringify(existingCompareCards));
     }
 
     const handleAddWishlist = ()=>{
