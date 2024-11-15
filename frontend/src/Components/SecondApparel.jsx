@@ -53,9 +53,9 @@ const SecondApparel = () => {
                 <>
                     <img src={selectedApparel2.thumbnail} alt={selectedApparel2.name} width="130" height= "110"></img>
                     <p><strong>Retail Price: </strong>{selectedApparel2.price != null ? "$"+selectedApparel2.price : "Price Not Provided"}</p>
-                    <p><strong>stockX: </strong>{selectedApparel2.stockXPrice != null ? "$"+selectedApparel2.stockXPrice : "N/A"}</p>
-                    <p><strong>flightClub: </strong>{selectedApparel2.flightClubPrice != null ? "$"+selectedApparel2.flightClubPrice : "N/A"}</p>
-                    <p><strong>goat: </strong>{selectedApparel2.goatPrice != null ? "$"+selectedApparel2.goatPrice : "N/A"}</p>
+                    <p><strong>StockX: </strong>{selectedApparel2.stockXPrice != null ? "$"+selectedApparel2.stockXPrice : "N/A"}</p>
+                    <p><strong>FlightClub: </strong>{selectedApparel2.flightClubPrice != null ? "$"+selectedApparel2.flightClubPrice : "N/A"}</p>
+                    <p><strong>Goat: </strong>{selectedApparel2.goatPrice != null ? "$"+selectedApparel2.goatPrice : "N/A"}</p>
                     <p><strong>Description: </strong>{selectedApparel2.description ? selectedApparel2.description : "Description Not Provided"}</p>
 
 
