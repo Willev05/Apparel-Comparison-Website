@@ -59,3 +59,12 @@
     cursor: pointer;
     background-color: rgb(162, 161, 161);
 }
+
+
+.des2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    height: 20vh;
+    width: 27vw;
+    overflow-y: auto;
+}

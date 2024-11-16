@@ -60,3 +60,10 @@
     background-color: rgb(162, 161, 161);
 }
 
+.des {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    height: 20vh;
+    width: 30vw;
+    overflow-y: auto;
+}

@@ -70,7 +70,11 @@ const SecondApparel = () => {
                     <p><strong>StockX: </strong>{selectedApparel2.stockXPrice != null ? "$"+selectedApparel2.stockXPrice : "N/A"}</p>
                     <p><strong>FlightClub: </strong>{selectedApparel2.flightClubPrice != null ? "$"+selectedApparel2.flightClubPrice : "N/A"}</p>
                     <p><strong>Goat: </strong>{selectedApparel2.goatPrice != null ? "$"+selectedApparel2.goatPrice : "N/A"}</p>
-                    <p><strong>Description: </strong>{selectedApparel2.description ? selectedApparel2.description : "Description Not Provided"}</p>
+                    <div className='des2'>
+                        <p><strong>Description: </strong>{selectedApparel2.description ? selectedApparel2.description : "Description Not Provided"}</p>
+
+                    </div>
+                   
 
 
                     <div className='action2'>
