@@ -76,7 +76,7 @@ useEffect(()=>{
 
           setLoadChange(loadChange+1);
 
-          if(selectedApparel.length === 0 && selectedApparel2.length === 0){
+        if(selectedApparel.length === 0 && selectedApparel2.length === 0){
             setSelectedApparel(storedApparels[indexToFind]);
 
         }
@@ -94,14 +94,33 @@ useEffect(()=>{
         else if(selectedApparel.length !== 0 && selectedApparel2.length !== 0){
 
           if(selectedNum === 0){
+            const existingCompareCards = JSON.parse(sessionStorage.getItem("Cards")) || [];
+
+            const index = 0;
+
+            if (index !== -1) {
+              existingCompareCards.splice(index, 1);
+            }
+
+          sessionStorage.setItem("Cards", JSON.stringify(existingCompareCards));
+
+
             setSelectedApparel(storedApparels[indexToFind]);
             setSelectedNum(1);
-
-
-
             
           }
           else{
+            const existingCompareCards = JSON.parse(sessionStorage.getItem("Cards")) || [];
+
+            const index = 0;
+
+            if (index !== -1) {
+              existingCompareCards.splice(index, 1);
+            }
+
+          sessionStorage.setItem("Cards", JSON.stringify(existingCompareCards));
+
+
             setSelectedApparel2(storedApparels[indexToFind]);
             setSelectedNum(0);
 
@@ -119,18 +138,18 @@ useEffect(()=>{
   return (
     <>
         <div className='CompareCard'>
-        <h3 className="title">{title}</h3>
-        <div className="content">
-            <img src={thumbnail} alt={title} className="thumbnail" />
-            <div className="info">
-                <p><strong>Price: </strong>{price != null ? "$"+price : "N/A"}</p>
-                <p><strong>Brand: </strong>{brand}</p>
-            </div>
-            <div className='action-buttons'>
-                <button id="remove" onClick={handleRemove}>Remove</button>
-                <button id="select" onClick={handleSelect}>Select</button>
-            </div>
-        </div>
+          <h3 className="title">{title}</h3>
+          <div className="content">
+              <img src={thumbnail} alt={title} className="thumbnail" />
+              <div className="info">
+                  <p><strong>Price: </strong>{price != null ? "$"+price : "N/A"}</p>
+                  <p><strong>Brand: </strong>{brand}</p>
+              </div>
+              <div className='action-buttons'>
+                  <button id="remove" onClick={handleRemove}>Remove</button>
+                  <button id="select" onClick={handleSelect}>Select</button>
+              </div>
+          </div>
         </div>
     </>
   );
