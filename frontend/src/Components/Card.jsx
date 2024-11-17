@@ -1,5 +1,6 @@
 import '../Styles/card.css';
 import comparepic from '../assets/compare.209x256.png';
+import compareFilled from'../assets/compareFilled.png';
 import heartOutline from '../assets/heartoutline2.png';
 import heartFilled from '../assets/heartFilled.png';
 import React, {useEffect, useState} from 'react';
@@ -83,8 +84,8 @@ const handleAddWishList = () => {
             <p><strong>Brand: </strong>{props.brand}</p>
 
 
-            <button className='compare' id={compareState} onClick={handelAddComparList}>
-                <img src={comparepic} className='image' alt="Add to Comparelist"></img>
+            <button className='compare'  onClick={handelAddComparList}>
+                <img src={compareState === "inCompare" ? compareFilled : comparepic} className='image' alt="Add to Comparelist"></img>
 
             </button>
             <button className='wish' onClick={handleAddWishList}>
