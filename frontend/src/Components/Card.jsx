@@ -84,8 +84,8 @@ const handleAddWishList = () => {
             <p><strong>Brand: </strong>{props.brand}</p>
 
 
-            <button className='compare' id={compareState} onClick={handelAddComparList}>
-                <img src={compareFilled} className='image' alt="Add to Comparelist"></img>
+            <button className='compare'  onClick={handelAddComparList}>
+                <img src={compareState === "inCompare" ? compareFilled : comparepic} className='image' alt="Add to Comparelist"></img>
 
             </button>
             <button className='wish' onClick={handleAddWishList}>
