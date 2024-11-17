@@ -1,6 +1,6 @@
 .search {
     height: 15vh;
-    width:35vw;
+    width:44vw;
     background-color: rgb(240, 240, 240);
     border-radius: 6px;
     margin-left: 30%;
@@ -22,20 +22,20 @@
     
 }
 
-.search button {
-    height: 30px;
-    width: 70px;
+.submit {
+    height: 3.3vh;
+    width: 4vw;
     border: none;
     border-radius: 10px;
     color: white;
     font-weight: bold;
     background-color: rgb(14, 176, 14);
     margin: 5px;
-    margin-left: 20px;
+    margin-left: 2vw;
 
 }
 
-.search button:hover {
+.submit:hover {
    cursor: pointer;
    background-color: rgb(12, 146, 12);
 
@@ -55,3 +55,20 @@
     margin: 10vw;
     margin-left: 43%;
 }
+
+.popular{
+    height: 3.2vh;
+    width: 6vw;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(16, 159, 187);
+    margin-left: 20px;
+}
+
+.popular:hover {
+    cursor: pointer;
+    background-color: rgb(15, 138, 163);
+ 
+ }
