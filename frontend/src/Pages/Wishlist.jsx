@@ -1,6 +1,7 @@
 import React from "react"; 
 import LoadWishCards from "../Components/LoadWishCards";
 import {ApparelProvider} from '../Context/ApparelContext';
+import '../Styles/Wishlist.css';
 
 const Wishlist = ()=>{
 
