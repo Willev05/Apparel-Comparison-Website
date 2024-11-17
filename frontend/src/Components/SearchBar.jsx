@@ -3,6 +3,27 @@ import '../Styles/SearchBar.css';
 import axios from 'axios';
 import Card from './Card.jsx';
 
+/*
+File: Searchbar.jsx
+Author: Shayaan Kashif
+Purpose: Handles retreving data from the API on load and when user makes a search request and rendering it to the screen
+Dependencies: Axios, dotenv
+Last Updated: November 15th 2024
+*/
+
+/* 
+----------Variables Overview-----------
+sneakers: Meant to hold the data from the API
+setSneakers: Used to update sneakers value
+searchTerm: Used to store what apparel the user wants to search for
+setSearchTerm:  Used to update searchTerms value
+errorMsg: Used to store any error messsages 
+setErrorMsg: used to update teh value of errorMsg
+result: Used to print what the user searched for 
+setResult: Used to update results value
+*/
+
+
 
 const SearchBar = () => {
     const [sneakers, setSneakers] = useState([]);
