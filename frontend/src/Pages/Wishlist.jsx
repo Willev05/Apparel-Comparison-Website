@@ -7,7 +7,7 @@ const Wishlist = ()=>{
 
     return(
         <>
-            <h1>Wishlist Page</h1>
+            <h1 id="wish-title">Wishlist Page</h1>
             <ApparelProvider>
                 <LoadWishCards />
 
