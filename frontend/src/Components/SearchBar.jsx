@@ -50,6 +50,7 @@ const SearchBar = () => {
                 const response = await axios.request(options);
                 console.log(response.data);//For Testing
                 setSneakers(response.data);
+                console.log(sneakers);
             } catch (error) {
                 console.error(error);
                 setErrorMsg("Failed to fetch sneaker data.");
@@ -85,6 +86,7 @@ const SearchBar = () => {
                 setSneakers([]);
                 setErrorMsg("Sorry, No Results for: "+searchTerm);
                 setResult("Results for: "+searchTerm);
+                
             }
             else{
                 setSneakers(response.data);
@@ -108,7 +110,10 @@ const SearchBar = () => {
     }
 
     const handleMostPopular = ()=>{
+        console.log(popularCount);
         setPopularCount(popularCount+1);
+        setErrorMsg(null);
+        console.log(popularCount);
 
     }
 
