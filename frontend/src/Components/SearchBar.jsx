@@ -39,7 +39,7 @@ const SearchBar = () => {
             const options = {
                 method: 'GET',
                 url: 'https://sneaker-database-stockx.p.rapidapi.com/mostpopular',
-                params: { limit: '10' },
+                params: { limit: '20' },
                 headers: {
                     'x-rapidapi-key': process.env.REACT_APP_API_KEY,
                     'x-rapidapi-host': 'sneaker-database-stockx.p.rapidapi.com'
@@ -55,8 +55,11 @@ const SearchBar = () => {
                 setErrorMsg("Failed to fetch sneaker data.");
             }
         };
+        
+            fetchPopularSneakers();
+        
 
-        fetchPopularSneakers();
+       
     }, [popularCount]);
 
 
@@ -76,7 +79,7 @@ const SearchBar = () => {
           
           try {
               const response = await axios.request(options);
-              console.log(response.data);
+
 
             if(response.data == null){
                 setSneakers([]);
@@ -87,6 +90,7 @@ const SearchBar = () => {
                 setSneakers(response.data);
                 setResult("Results for: "+searchTerm);
                 setErrorMsg(null);
+
 
             }
 
@@ -105,6 +109,7 @@ const SearchBar = () => {
 
     const handleMostPopular = ()=>{
         setPopularCount(popularCount+1);
+
     }
 
 
