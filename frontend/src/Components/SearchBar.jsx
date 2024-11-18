@@ -70,6 +70,10 @@ const SearchBar = () => {
             let maxWidth = window.innerWidth;
             let widthOfParent = Math.floor(maxWidth / 462) * 462;
             let container = document.querySelector(".shoeList");
+            if (!container)
+            {
+                return;
+            }
             container.style.width = widthOfParent + "px";
         }
         resizeCardContainer();
