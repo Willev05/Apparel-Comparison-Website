@@ -15,23 +15,41 @@ const LoadWishCards = () => {
         setSneakers(storedShoes);
     }, [loadChange]);
 
+    useEffect(() => {
+        function resizeWishCardContainer() {
+            let maxWidth = window.innerWidth;
+            let container = document.querySelector(".loadWish");
+            if (!container)
+            {
+                return;
+            }
+            let widthOfParent = Math.min(document.querySelectorAll(".loadWish > .card2").length, Math.floor(maxWidth / 562)) * 562;
+            container.style.width = widthOfParent + "px";
+        }
+        resizeWishCardContainer();
+        window.removeEventListener("resize", resizeWishCardContainer);
+        window.addEventListener("resize", resizeWishCardContainer);
+    });
+
     return (
-        <div className='loadWish'>
-            {sneakers.map((sneaker, index) => (
-                <WishCards 
-                    key={index}
-                    title={sneaker.title} 
-                    thumbnail={sneaker.thumbnail} 
-                    price={sneaker.price} 
-                    brand={sneaker.brand} 
-                    stockXPrice={sneaker.stockXPrice}
-                    stockXLink={sneaker.stockXLink}
-                    flightClubPrice={sneaker.flightClubPrice}
-                    flightClubLink={sneaker.flightClubLink}
-                    goatPrice={sneaker.goatPrice}
-                    goatLink={sneaker.goatLink}
-                />
-            ))}
+        <div className='loadWishContainer'>
+             <div className='loadWish'>
+                {sneakers.map((sneaker, index) => (
+                    <WishCards 
+                        key={index}
+                        title={sneaker.title} 
+                        thumbnail={sneaker.thumbnail} 
+                        price={sneaker.price} 
+                        brand={sneaker.brand} 
+                        stockXPrice={sneaker.stockXPrice}
+                        stockXLink={sneaker.stockXLink}
+                        flightClubPrice={sneaker.flightClubPrice}
+                        flightClubLink={sneaker.flightClubLink}
+                        goatPrice={sneaker.goatPrice}
+                        goatLink={sneaker.goatLink}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

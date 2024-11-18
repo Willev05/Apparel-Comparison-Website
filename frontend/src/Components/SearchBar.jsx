@@ -68,17 +68,18 @@ const SearchBar = () => {
     useEffect(() => {
         function resizeCardContainer() {
             let maxWidth = window.innerWidth;
-            let widthOfParent = Math.floor(maxWidth / 462) * 462;
             let container = document.querySelector(".shoeList");
             if (!container)
             {
                 return;
             }
+            let widthOfParent = Math.min(document.querySelectorAll(".shoeList > .card").length, Math.floor(maxWidth / 462)) * 462;
             container.style.width = widthOfParent + "px";
         }
         resizeCardContainer();
+        window.removeEventListener("resize", resizeCardContainer);
         window.addEventListener("resize", resizeCardContainer);
-    }, []);
+    });
 
 
     const handleSearch = async()=>{

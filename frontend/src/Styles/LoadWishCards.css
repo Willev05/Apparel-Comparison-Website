@@ -1,4 +1,10 @@
-.loadwish {
-    width: 50vw;
-    height: 20vh;
+.loadWishContainer {
+    text-align: center;
+    width: 100%;
+}
+
+.loadWish {
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: left;
 }
