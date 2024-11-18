@@ -50,6 +50,8 @@ const SearchBar = () => {
                 const response = await axios.request(options);
                 console.log(response.data);//For Testing
                 setSneakers(response.data);
+                setSearchTerm("");
+                setResult("Most Popular");
                 console.log(sneakers);
             } catch (error) {
                 console.error(error);
@@ -110,11 +112,10 @@ const SearchBar = () => {
     }
 
     const handleMostPopular = ()=>{
-        console.log(popularCount);
         setPopularCount(popularCount+1);
         setErrorMsg(null);
-        console.log(popularCount);
 
+        
     }
 
 
