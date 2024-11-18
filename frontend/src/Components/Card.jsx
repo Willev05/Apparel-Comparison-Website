@@ -8,8 +8,8 @@ import React, {useEffect, useState} from 'react';
 function Card(props){
 
 
-const existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
-const existingCompareShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
+let existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
+let existingCompareShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
 
 const [compareState, setCompareState] = useState("notCompare");
 
@@ -25,6 +25,7 @@ useEffect(() => {
 
 
 const handleAddWishList = () => {
+    existingWishlist = JSON.parse(localStorage.getItem("Wishlist")) || [];
     const index = existingWishlist.findIndex(item => item.title === props.name);
     if (index !== -1) {
         existingWishlist.splice(index, 1);
@@ -50,6 +51,7 @@ const handleAddWishList = () => {
 };
 
     const handelAddComparList = () => {
+        existingCompareShoes = JSON.parse(localStorage.getItem("Compare List")) || [];
         const index = existingCompareShoes.findIndex(item => item.title === props.name);
     if (index !== -1) {
         existingCompareShoes.splice(index, 1);
