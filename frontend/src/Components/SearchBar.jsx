@@ -65,6 +65,17 @@ const SearchBar = () => {
        
     }, [popularCount]);
 
+    useEffect(() => {
+        function resizeCardContainer() {
+            let maxWidth = window.innerWidth;
+            let widthOfParent = Math.floor(maxWidth / 462) * 462;
+            let container = document.querySelector(".shoeList");
+            container.style.width = widthOfParent + "px";
+        }
+        resizeCardContainer();
+        window.addEventListener("resize", resizeCardContainer);
+    }, []);
+
 
     const handleSearch = async()=>{
         const options = {
@@ -130,31 +141,33 @@ const SearchBar = () => {
             </div>
             
 
-            
-            <div className='shoeList'>
-                <h2>{result}</h2>
+            <h2>{result}</h2>
+            <div className='shoeListContainer'>
+                <div className='shoeList'>
+                    
+                    {errorMsg === null? (
+                        sneakers.map((sneaker, index) => (
 
-                {errorMsg === null? (
-                    sneakers.map((sneaker, index) => (
-
-                        <Card 
-                            name={sneaker.shoeName} 
-                            thumbnail={sneaker.thumbnail} 
-                            price={sneaker.retailPrice} 
-                            brand={sneaker.brand} 
-                            stockXPrice= {sneaker.lowestResellPrice?.stockX ?? null}
-                            stockXLink= {sneaker.resellLinks?.stockX ?? null}
-                            flightClubPrice= {sneaker.lowestResellPrice?.flightClub ?? null}
-                            flightClubLink= {sneaker.resellLinks?.flightClub ?? null}
-                            goatPrice= {sneaker.lowestResellPrice?.goat ?? null}
-                            goatLink= {sneaker.resellLinks?.goat ?? null}
-                            description={sneaker.description ?? 'No description available.'}
-                            key={index}
-                        />
-                    ))
-                ) : (<p id="err">{errorMsg}</p>)}
-                
+                            <Card 
+                                name={sneaker.shoeName} 
+                                thumbnail={sneaker.thumbnail} 
+                                price={sneaker.retailPrice} 
+                                brand={sneaker.brand} 
+                                stockXPrice= {sneaker.lowestResellPrice?.stockX ?? null}
+                                stockXLink= {sneaker.resellLinks?.stockX ?? null}
+                                flightClubPrice= {sneaker.lowestResellPrice?.flightClub ?? null}
+                                flightClubLink= {sneaker.resellLinks?.flightClub ?? null}
+                                goatPrice= {sneaker.lowestResellPrice?.goat ?? null}
+                                goatLink= {sneaker.resellLinks?.goat ?? null}
+                                description={sneaker.description ?? 'No description available.'}
+                                key={index}
+                            />
+                        ))
+                    ) : (<p id="err">{errorMsg}</p>)}
+                    
+                </div>
             </div>
+            
         </>
     );
 };

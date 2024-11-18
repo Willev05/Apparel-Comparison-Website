@@ -42,12 +42,16 @@
 }
 
 .shoeList {
-
     margin-bottom: 20px;
-    margin-left: 1.5%;
+    display: inline-block;
+    text-align: left;
 }
 
-.shoeList h2{
+#root > h2{
+    text-align: center;
+}
+
+.shoeListContainer {
     text-align: center;
 }
 
