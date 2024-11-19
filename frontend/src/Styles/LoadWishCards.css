@@ -1,0 +1,10 @@
+.loadWishContainer {
+    text-align: center;
+    width: 100%;
+}
+
+.loadWish {
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: left;
+}

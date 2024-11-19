@@ -13,7 +13,7 @@
     display: flex;
     gap: 20px;
     padding: 0;
-    margin: 0;
+    margin: 1px;
   }
   
   .nav-links li a {
@@ -25,16 +25,18 @@
   .nav-links li .active {
     font-weight: bold;
     background-color: #212121;
+    gap: 0px;
   }
   
   .navbar-center {
     flex: 1;
     text-align: center;
   }
-  
-  .website-name {
-    margin: 0;
-    font-size: 1.5em;
-    color: #ffffff;
+
+  .nav-links li a:hover {
+    background-color: #212121;
+
+    
   }
+  
   

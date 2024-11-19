@@ -1,0 +1,16 @@
+.loadDiv {
+    height: 81.2vh;
+    width: 30vw;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin-left: 1.5vw;
+    overflow-y: auto;
+    border-radius: 10px;
+
+
+}
+
+.loadDiv h2 {
+    padding-left: 30%;
+    padding-top: 1%;
+}

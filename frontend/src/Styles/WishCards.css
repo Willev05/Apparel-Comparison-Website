@@ -1,0 +1,32 @@
+.card2{
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 500px;
+    display: inline-block;
+    height: 580px;
+    vertical-align: middle;
+    overflow: auto;
+
+}
+
+
+#remove-wish {
+    height:27px;
+    width: 170px;
+    background-color: rgb(212, 64, 64);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+
+#remove-wish:hover {
+    cursor: pointer;
+    background-color: rgb(165, 18, 18);
+
+}

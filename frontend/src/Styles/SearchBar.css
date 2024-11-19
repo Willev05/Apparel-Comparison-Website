@@ -1,14 +1,14 @@
 .search {
-    height: 12vh;
-    width:30vw;
+    height: 15vh;
+    width:44vw;
     background-color: rgb(240, 240, 240);
     border-radius: 6px;
-    margin-left: 35%;
+    margin-left: 30%;
     padding: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .search p{
-    padding-left: 25%;
+    padding-left: 16%;
 }
 
 
@@ -18,24 +18,61 @@
     border: none;
     border-radius: 5px;
     margin-left: 15%;
+    padding-left: 5px;
     
 }
 
-.search button {
-    height: 30px;
-    width: 70px;
+.submit {
+    height: 3.5vh;
+    width: 4.5vw;
     border: none;
     border-radius: 10px;
     color: white;
     font-weight: bold;
     background-color: rgb(14, 176, 14);
     margin: 5px;
-    margin-left: 20px;
+    margin-left: 2vw;
 
 }
 
-.search button:hover {
+.submit:hover {
    cursor: pointer;
    background-color: rgb(12, 146, 12);
 
 }
+
+.shoeList {
+    margin-bottom: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+#root > h2{
+    text-align: center;
+}
+
+.shoeListContainer {
+    text-align: center;
+}
+
+#err {
+    margin: 10vw;
+    margin-left: 43%;
+}
+
+.popular{
+    height: 3.5vh;
+    width: 7vw;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(16, 159, 187);
+    margin-left: 20px;
+}
+
+.popular:hover {
+    cursor: pointer;
+    background-color: rgb(15, 138, 163);
+ 
+ }

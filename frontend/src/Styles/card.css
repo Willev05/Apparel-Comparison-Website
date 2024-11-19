@@ -1,0 +1,78 @@
+.card{
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 400px;
+    display: inline-block;
+    height: 400px;
+    vertical-align: middle;
+
+}
+
+.card button {
+    border-radius: 50%;
+}
+
+.card h2 {
+    height:64px;
+    overflow: auto;
+}
+
+.compare{
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+    margin: 15px;
+    margin-right: 40px;
+    background-color: #E8E8E8;
+}
+
+#notCompare{
+    background-color: #E8E8E8;
+}
+
+#notCompare:hover{
+    cursor: pointer;
+    background-color: #d0cece;
+}
+
+#inCompare {
+    background-color: #16c716;
+}
+
+#inCompare:hover{
+    background-color: #0c8d0c;
+}
+
+
+.image{
+    max-width: 60%;
+    max-height: 60%;
+}
+
+.compare:hover{
+    cursor: pointer;
+    background-color: #d0cece;
+    
+}
+
+.wish{
+    height: 40px;
+    width: 80px;
+    border: none;
+    background-color: #E8E8E8;
+    border-radius: 5px;
+    margin: 15px;
+    margin-left: 40px;
+}
+
+.wish:hover{
+    cursor: pointer;
+    background-color: #d0cece;
+    
+}
+
