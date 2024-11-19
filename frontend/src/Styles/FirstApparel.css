@@ -67,3 +67,42 @@
     width: 30vw;
     overflow-y: auto;
 }
+
+.retial{
+    margin-bottom: 0px;
+}
+
+.BP{
+    color: rgb(0, 158, 0);
+    font-weight: bold;
+}
+
+.stockx-prices{
+    display: flex;
+    gap: 10px;
+
+}
+
+.stockx-prices p{
+    margin-bottom: 5px;
+
+}
+
+.flightClub-prices{
+    display: flex;
+    gap: 10px;
+}
+
+.flightClub-prices p{
+    margin-bottom: 5px;
+}
+
+.goat-prices{
+    display: flex;
+    gap: 10px;
+}
+
+
+.goat-prices p{
+    margin-bottom: 5px;
+}
