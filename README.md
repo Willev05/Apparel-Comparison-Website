@@ -13,8 +13,8 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Shayaan-Kashif/Shoe-Comparison.git
-   cd Shoe-Comparison
+   git clone https://github.com/Willev05/Apparel-Comparison-Website.git
+   cd Apparel-Comparison-Website
     ```
 2. Install dependancies 
 ```bash
