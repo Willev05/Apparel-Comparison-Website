@@ -35,33 +35,21 @@ const SearchBar = () => {
     const [popularCount,setPopularCount] = useState(0);
 
     useEffect(() => {
-        const fetchPopularSneakers = async () => {
+        const fetchShoesFromDatabase = async () => {
             const options = {
                 method: 'GET',
-                url: 'https://sneaker-database-stockx.p.rapidapi.com/mostpopular',
-                params: { limit: '20' },
-                headers: {
-                    'x-rapidapi-key': process.env.REACT_APP_API_KEY,
-                    'x-rapidapi-host': 'sneaker-database-stockx.p.rapidapi.com'
-                }
+                url: 'http://localhost:8080/getShoes'
             };
 
-            try {
-                const response = await axios.request(options);
-                console.log(response.data);//For Testing
-                setSneakers(response.data);
-                setSearchTerm("");
-                setResult("Most Popular");
-                console.log(sneakers);
-            } catch (error) {
-                console.error(error);
-                setErrorMsg("Failed to fetch sneaker data.");
-            }
+            const response = await axios.request(options);
+            setSearchTerm("");
+            setResult("Most Popular");
+            console.log(response.data);
+            setSneakers(response.data);
         };
         
-            fetchPopularSneakers();
-        
-
+        console.log("Testing")
+        fetchShoesFromDatabase();
        
     }, [popularCount]);
 
@@ -154,16 +142,16 @@ const SearchBar = () => {
                         sneakers.map((sneaker, index) => (
 
                             <Card 
-                                name={sneaker.shoeName} 
+                                name={sneaker.name} 
                                 thumbnail={sneaker.thumbnail} 
-                                price={sneaker.retailPrice} 
+                                price={sneaker.price} 
                                 brand={sneaker.brand} 
-                                stockXPrice= {sneaker.lowestResellPrice?.stockX ?? null}
-                                stockXLink= {sneaker.resellLinks?.stockX ?? null}
-                                flightClubPrice= {sneaker.lowestResellPrice?.flightClub ?? null}
-                                flightClubLink= {sneaker.resellLinks?.flightClub ?? null}
-                                goatPrice= {sneaker.lowestResellPrice?.goat ?? null}
-                                goatLink= {sneaker.resellLinks?.goat ?? null}
+                                stockXPrice= {sneaker.stockXPrice ?? null}
+                                stockXLink= {sneaker.stockXLink ?? null}
+                                flightClubPrice= {sneaker.flightClubPrice ?? null}
+                                flightClubLink= {sneaker.flightClubLink ?? null}
+                                goatPrice= {sneaker.goatPrice ?? null}
+                                goatLink= {sneaker.goatLink ?? null}
                                 description={sneaker.description ?? 'No description available.'}
                                 key={index}
                             />
