@@ -1,6 +1,7 @@
 # Shoe Comparison Website
 
  This web application allows you to search for shoes, view detailed information, and compare multiple pairs to help you find the perfect choice.
+ Dev branch currently not stable.
 
 ## Features
 
